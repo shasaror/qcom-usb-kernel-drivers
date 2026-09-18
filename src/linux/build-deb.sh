@@ -359,7 +359,7 @@ if [ -n "\$MISSING_DEPS" ]; then
   echo "[QUD] Installing missing build dependencies:\$MISSING_DEPS ..." >> "\$LOG_FILE" 2>&1
   APT_OUT=\$(DEBIAN_FRONTEND=noninteractive apt-get install -y \$MISSING_DEPS 2>&1) || {
     if echo "\$APT_OUT" | grep -q "lock"; then
-      echo "[QUD] WARNING: dpkg lock held — build dependencies not installed. Retry manually: sudo apt-get install\$MISSING_DEPS" >> "\$LOG_FILE" 2>&1
+      echo "[QUD] WARNING: dpkg lock held - build dependencies not installed. Retry manually: sudo apt-get install\$MISSING_DEPS" >> "\$LOG_FILE" 2>&1
     else
       echo "[QUD] WARNING: apt-get install failed:\$APT_OUT" >> "\$LOG_FILE" 2>&1
     fi
